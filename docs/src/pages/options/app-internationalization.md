@@ -78,14 +78,17 @@ build: {
   extendWebpack (cfg) {
     cfg.module.rules.push({
       resourceQuery: /blockType=i18n/,
-      use: [
-        {loader: '@kazupon/vue-i18n-loader'},
-        {loader: 'yaml-loader'}
-      ]
+      loader: '@intlify/vue-i18n-loader'
     })
     ...
   }
 }
+```
+
+Make sure you define `yaml` as the language in your i18n block:
+
+```
+  <i18n lang="yaml">
 ```
 
 ## How to use
